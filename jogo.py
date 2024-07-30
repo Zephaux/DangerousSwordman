@@ -8,8 +8,10 @@ def jogo():
     player = {'Nome': nome, 'Vida': 30}
     mob = {'Nome': 'kara di kwo', 'Vida': 100 }
 
+
     player1 = None # variável para ser linkada com o dicionário do player 1
     player2 = None # variável para ser linkada com o dicionário do player 2
+
 
     for c in range(0,1): #for usado para definir quem vai começar atacando
         player_dice = rolar_dado()
@@ -24,6 +26,7 @@ def jogo():
 
     escolher_acao = 0
 
+
     while True:
         damage = rolar_dado()
         if damage == 0:
@@ -35,8 +38,7 @@ def jogo():
         time.sleep(1)
         if player['Vida'] <= 0:
             break
-        # os.system('cls') #limpa o terminal
+        os.system('cls') #limpa o terminal
     print('Morreu')
-
 
 jogo()
