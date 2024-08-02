@@ -2,11 +2,13 @@ import random, os, time
 
 def rolar_dado(): # "dados" do jogo pode ser tanto pra dano, quanto pra ataque
     return random.randint(0, 10)
+def d20():
+    return random.randint(1,20)
 
 def jogo():
     nome = input('Digite seu nome')
-    player = {'Nome': nome, 'Vida': 30}
-    mob = {'Nome': 'kara di kwo', 'Vida': 100 }
+    player = {'Nome': nome, 'Vida': 30,'Ataque': 40, 'Defesa': 20}
+    mob = {'Nome': 'kara di kwo', 'Vida': 100, 'Defesa': 10}
 
 
     player1 = None # variável para ser linkada com o dicionário do player 1
@@ -27,7 +29,7 @@ def jogo():
     escolher_acao = 0 # 1 - Ataca // 2 - Defende // 3 - Item
 
     while True: # validaçao da ação
-        escolher_acao = input("O que gostaria de fazer \n[1] Atacar\n[2] Defender\n[4] Item\n")
+        escolher_acao = input("O que gostaria de fazer \n[1] Atacar\n[2] Defender\n[3] Item\n[4]Status\n")
 
         match escolher_acao:
             case '1':
@@ -36,10 +38,19 @@ def jogo():
                 break
             case '3':
                 break
+            case '4':
+                break
             case _:
                 print("Por favor selecione uma opção válida!")
                 continue
-    #sistema ataque defesa bibliografia: "https://forgotten-rpg.forumeiros.com/t11-calculo-de-dano"
+
+    if escolher_acao == 1:
+        print("Você escolheu atacar!")
+        ataque = 
+        dano =
+    # sistema ataque defesa bibliografia: "https://forgotten-rpg.forumeiros.com/t11-calculo-de-dano"
+    # Dano = Ataque - Defesa // Ataque = Força + Dano da Arma + d20 //
+    # Defesa = Constituição + Resistência do Equipamento + d20
 
     # if escolher_acao not in '123':
     #     print("Por favor selecione uma opção válida!")
